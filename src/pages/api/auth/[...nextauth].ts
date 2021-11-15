@@ -14,17 +14,17 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async session(session) {
-      const userActiveSubscription = await fauna.query(
-        q.Get(
-          q.Match(
-            q.Index('subscription_by_user_ref')
-          )
-        )
-      )
+ //   async session(session) {
+  //    const userActiveSubscription = await fauna.query(
+   //     q.Get(
+   //       q.Match(
+    //        q.Index('subscription_by_user_ref')
+    //      )
+     //   )
+     // )
 
-      return session
-    },
+    //  return session
+   // },
     async signIn(user, account, profile) {
       const { email } = user
 
